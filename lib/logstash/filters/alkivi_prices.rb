@@ -84,14 +84,14 @@ class LogStash::Filters::AlkiviPrices < LogStash::Filters::Base
 
     if billsec
       if costs_line
-        cost0 = billsec.to_f / 60 * costs_line["prix0"].to_f
-        cost1 = billsec.to_f / 60 * costs_line["prix1"].to_f
-        cost2 = billsec.to_f / 60 * costs_line["prix2"].to_f
+        cost0 = (billsec.to_f / 60 * costs_line["prix0"].to_f).round(6)
+        cost1 = (billsec.to_f / 60 * costs_line["prix1"].to_f).round(6)
+        cost2 = (billsec.to_f / 60 * costs_line["prix2"].to_f).round(6)
       end
       if prices_line
-        price0 = billsec.to_f / 60 * prices_line["prix0"].to_f
-        price1 = billsec.to_f / 60 * prices_line["prix1"].to_f
-        price2 = billsec.to_f / 60 * prices_line["prix2"].to_f
+        price0 = (billsec.to_f / 60 * prices_line["prix0"].to_f).round(6)
+        price1 = (billsec.to_f / 60 * prices_line["prix1"].to_f).round(6)
+        price2 = (billsec.to_f / 60 * prices_line["prix2"].to_f).round(6)
       end
     end
 
