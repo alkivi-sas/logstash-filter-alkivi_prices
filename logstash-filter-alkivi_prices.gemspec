@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name          = 'logstash-filter-alkivi_prices'
-  s.version       = '1.0.1'
+  s.version       = '1.0.2'
   s.licenses      = ['Apache-2.0']
   s.summary       = 'Parse CRD to add cost and prices.'
   s.homepage      = 'https://github.com/alkivi-sas/logstash-filter-alkivi_prices'

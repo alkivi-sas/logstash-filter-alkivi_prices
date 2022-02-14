@@ -63,16 +63,19 @@ class LogStash::Filters::AlkiviPrices < LogStash::Filters::Base
         wanted_key = "2"
     end
 
-    csv_code = source_country + "-" + wanted_key
-
     costs_line = nil
-    if @costs_data.key?(csv_code)
-      costs_line = @costs_data[csv_code]
-    end
-
     prices_line = nil
-    if @prices_data.key?(csv_code)
-      prices_line = @prices_data[csv_code]
+
+    if source_country
+      csv_code = source_country + "-" + wanted_key
+
+      if @costs_data.key?(csv_code)
+        costs_line = @costs_data[csv_code]
+      end
+
+      if @prices_data.key?(csv_code)
+        prices_line = @prices_data[csv_code]
+      end
     end
 
     cost0 = 0.0
